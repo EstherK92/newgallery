@@ -1,0 +1,46 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: #eaeded; 
+    color: #333;
+    font-family: courier new, courier, monospace;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 35px;
+}
+
+h1 {
+      text-align: centre;
+      font-weight: light;
+      padding: 20px 15px 15px 20px;
+      font-size: 28px;
+      margin: -7px;
+      margin-bottom: 0;
+      background-color: #eaeded;
+      color: #598a98; 
+    }
+    
+ p {
+    font-family: courier new, courier, monospace;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 15px ;
+ }
+ 
+  td {
+      font-size: 15px;
+      font-family: courier new, courier, monospace;
+  }
+  
+  form {
+      padding: 12px;
+      
+  }
+  
+  ul {
+      margin: 2 5px;
+  }
+  
+  
