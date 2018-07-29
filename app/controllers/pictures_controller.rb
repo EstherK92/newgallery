@@ -6,6 +6,13 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     @pictures = Picture.all
+    
+    if params[:search]
+    @pictures = @pictures.search(params[:search])
+    @pictures = @pictures.order("created_at ASC") 
+    else
+    @pictures = @pictures.order("created_at DESC")
+    end
   end
 
   # GET /pictures/1

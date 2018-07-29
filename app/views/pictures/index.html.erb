@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag(pictures_path, :method => "get") do %>
+<%= text_field_tag :search, nil, :placeholder => "Search Pictures by Name" %>
+<%= submit_tag "search" %>
+<% end %>
+
 <h1>Pictures</h1>
 
 <table>
