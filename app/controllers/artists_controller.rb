@@ -5,6 +5,13 @@ class ArtistsController < ApplicationController
   # GET /artists.json
   def index
     @artists = Artist.all
+    
+    if params[:search]
+        @artists = @artists.search(params[:search])
+        @artists = @artists.order("created_at ASC")
+        else
+        @artists = @artists.order("created_at DESC")
+        end
   end
 
   # GET /artists/1
