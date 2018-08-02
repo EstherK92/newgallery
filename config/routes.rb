@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :artists
   devise_for :users
   resources :pictures
-  root 'welcome#home'
+  resource :cart, only: [:show]
+  resources :order_item, only: [:create, :update, :destroy]
+  
+  root to: "pictures#index"
 
   get '/about' =>'welcome#about'
 

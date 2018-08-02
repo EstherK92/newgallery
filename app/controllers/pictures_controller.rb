@@ -6,6 +6,7 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     @pictures = Picture.all
+    @order_items = current_order.order_items.new
     
     if params[:search]
     @pictures = @pictures.search(params[:search])

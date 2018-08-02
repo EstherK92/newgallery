@@ -1,9 +1,9 @@
-class OrderItem < ApplicationRecord
-  belongs_to :product
+class OrderItem < ActiveRecord::Base
+  belongs_to :picture
   belongs_to :order
   
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validate :product_present
+  validate :picture_present
   validate :order_present
 
   before_save :finalize
@@ -21,9 +21,9 @@ class OrderItem < ApplicationRecord
   end
 
 private
-  def product_present
-    if product.nil?
-      errors.add(:product, "is not valid or is not active.")
+  def picture_present
+    if picture.nil?
+      errors.add(:picture, "is not valid or is not active.")
     end
   end
 
@@ -37,6 +37,4 @@ private
     self[:unit_price] = unit_price
     self[:total_price] = quantity * self[:unit_price]
   end
-end
-  
 end
