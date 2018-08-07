@@ -81,3 +81,4 @@ class PicturesController < ApplicationController
       params.require(:picture).permit(:name, :width, :height, :price, :artist, :desc)
     end
 end
+
