@@ -6,6 +6,10 @@ class Picture < ActiveRecord::Base
 
 def self.search(search_for)
     Picture.where("name = ?", search_for)
+  
+  validates_presence_of :name
+
+  mount_uploader :image, ImageUploader
     end
-    
-end
+   
+  end
