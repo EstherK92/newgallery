@@ -30,10 +30,10 @@
   <%= @picture.desc %>
 </p>
 
-<p>
+<div>
 <strong>Image</strong>
 <%#= image_tag(@picture.image_url(:thumb).to_s) %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
