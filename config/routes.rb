@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :pictures
   resource :cart, only: [:show]
   resources :order_item, only: [:create, :update, :destroy]
+  resources :charges
   
   root to: "pictures#index"
 

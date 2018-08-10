@@ -1,11 +1,26 @@
 class PaymentController < ApplicationController
 
-def create
-  @payment = Payment.new(params[:payment])
-  if @payment.save_with_payment
-    redirect_to @payment, :notice => "Thank you!"
-  else
-    render :new
-  end
+def new
+end
 
+def create
+  # Amount in cents
+  @amount = 500
+
+  customer = Stripe::Customer.create(
+    :email => params[:stripeEmail],
+    :source  => params[:stripeToken]
+  )
+
+  charge = Stripe::Charge.create(
+    :customer    => customer.id,
+    :amount      => @amount,
+    :description => 'Rails Stripe customer',
+    :currency    => 'usd'
+  )
+
+rescue Stripe::CardError => e
+  flash[:error] = e.message
+  redirect_to new_charge_path
+end
 end
