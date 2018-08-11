@@ -8,8 +8,9 @@ def self.search(search_for)
     Picture.where("name = ?", search_for)
   
   validates_presence_of :name
+end
+ 
+# mount_uploader :image, ImageUploader
 
-  mount_uploader :image, ImageUploader
-    end
    
   end
