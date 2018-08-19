@@ -10,9 +10,9 @@ class PicturesController < ApplicationController
     
     if params[:search]
     @pictures = @pictures.search(params[:search])
-    @pictures = @pictures.order("created_at ASC") 
+    @pictures = @pictures#.order("created_at ASC") 
     else
-    @pictures = @pictures.order("created_at DESC")
+    @pictures = @pictures#.order("created_at DESC")
     end
   end
 

@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Picture.delete_all
-Picture.create! id: 1, name: "The forest", price: 150.00, active: true
-Picture.create! id: 2, name: "The prom", price: 150.00, active: true
-Picture.create! id: 3, name: "Sea front", price: 200.00, active: true
+Picture.create! name: "The forest", price: 150.00, active: true
+Picture.create! name: "The prom", price: 150.00, active: true
+Picture.create! name: "Sea front", price: 200.00, active: true
 
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"

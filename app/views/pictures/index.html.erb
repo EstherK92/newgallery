@@ -37,7 +37,7 @@
         <td><%= picture.price %></td>
         <td><%= picture.artist %></td>
         <td><%= picture.desc %></td>
-        <td><%#= image_tag(@picture.image_url(:thumb).to_s) %></td>
+        <td><%#= image_tag(@picture.image_url.to_s) %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
         <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
